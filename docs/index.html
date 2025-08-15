@@ -1,192 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Birthday Page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="Croco.png">
-  <style>
-    body {
-      font-family: 'Orbitron', sans-serif;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Birthday Page</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="Croco.png">
+<style>
+body {
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+}
 
-    /* Dynamic Grid Background */
-    .grid-bg {
-      background-image: linear-gradient(to right, rgba(0, 255, 0, 0.15) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(0, 255, 0, 0.15) 1px, transparent 1px);
-      background-size: 40px 40px;
-      background-position: 0 0;
-    }
+/* Dynamic Grid Background */
+.grid-bg {
+  background-image: linear-gradient(to right, rgba(0, 255, 0, 0.15) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 255, 0, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0;
+}
 
-    /* Orb Styling - More Translucent */
-    .orb {
-      pointer-events: none;
-      position: fixed;
-      width: 35px;
-      height: 35px;
-      background: rgba(0, 255, 100, 0.4);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 9999;
-      box-shadow: 0 0 10px rgba(0, 255, 100, 0.4), 0 0 20px rgba(0, 255, 100, 0.2);
-      transition: transform 0.2s ease-out, opacity 0.3s ease-out;
-    }
+/* Orb Styling */
+.orb {
+  pointer-events: none;
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  background: rgba(0, 255, 100, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(0, 255, 100, 0.4), 0 0 20px rgba(0, 255, 100, 0.2);
+  transition: transform 0.2s ease-out, opacity 0.3s ease-out;
+}
+.orb.click { transform: translate(-50%, -50%) scale(5); opacity: 0; }
 
-    .orb.click {
-      transform: translate(-50%, -50%) scale(5);
-      opacity: 0;
-    }
-
-    .trail {
-      pointer-events: none;
-      position: fixed;
-      width: 30px;
-      height: 30px;
-      background: rgba(0, 255, 100, 0.3);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      box-shadow: 0 0 6px rgba(0, 255, 100, 0.3);
-      animation: fadeTrail 0.4s forwards;
-      z-index: 9998;
-    }
-
-    @keyframes fadeTrail {
-      to {
-        transform: translate(-50%, -50%) scale(2.5);
-        opacity: 0;
-      }
-    }
-  </style>
+.trail {
+  pointer-events: none;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 255, 100, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px rgba(0, 255, 100, 0.3);
+  animation: fadeTrail 0.4s forwards;
+  z-index: 9998;
+}
+@keyframes fadeTrail { to { transform: translate(-50%, -50%) scale(2.5); opacity: 0; } }
+</style>
 </head>
 <body class="bg-black text-white">
 
-  <!-- Mouse-follow orb -->
-  <div class="orb"></div>
+<div class="orb"></div>
 
-  <!-- Hero Section -->
-  <section id="home" class="relative grid-bg flex items-center justify-between px-[50px] h-screen">
-    <div class="text-left max-w-3xl p-[50px]">
-      <h1 class="text-8xl md:text-[150px] font-extrabold text-green-400 drop-shadow-lg leading-tight">
-        Happy 40th Birthday!
-      </h1>
-      <p class="mt-8 text-4xl text-green-200">From Chipakli, Shriyan, Panda, And Behen</p>
+<!-- Hero Section -->
+<section id="home" class="relative grid-bg flex flex-col md:flex-row items-center justify-between px-4 sm:px-8 md:px-[50px] min-h-screen gap-8 md:gap-0">
+  <!-- Text -->
+  <div class="text-left max-w-full md:max-w-3xl p-4 md:p-[50px]">
+    <h1 class="text-4xl sm:text-6xl md:text-[150px] font-extrabold text-green-400 drop-shadow-lg leading-tight">
+      Happy 40th Birthday!
+    </h1>
+    <p class="mt-4 sm:mt-8 text-lg sm:text-2xl md:text-4xl text-green-200">
+      From Chipkali, Shriyan, Panda, And Behen
+    </p>
+  </div>
+
+  <!-- Alligator box -->
+  <div class="relative w-full md:w-[657px] h-auto md:h-[685px] overflow-hidden border-4 border-green-400 rounded-xl bg-green-950/80 p-4 md:p-[14px]">
+    <img src="AlligatorPic.png" alt="Alligator" class="relative mx-auto w-full h-auto max-w-full z-10 drop-shadow-lg rounded-xl">
+  </div>
+</section>
+
+<!-- Wishes Section -->
+<section id="wishes" class="grid-bg py-10 sm:py-20 px-4 sm:px-10">
+  <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold text-green-300 mb-8 sm:mb-14 text-center">
+    Special Birthday Wishes
+  </h2>
+
+  <div class="flex flex-col items-center gap-6 sm:gap-8">
+    <!-- Video selector buttons -->
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-4">
+      <button onclick="changeVideo('0_People_Group_3840x2160.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 1</button>
+      <button onclick="changeVideo('678554_University_College_3840x2160.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 2</button>
+      <button onclick="changeVideo('1118034_1080p_4k_4096x2160.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 3</button>
+      <button onclick="changeVideo('Anuv Jain - AFSOS ft. AP Dhillon Official Visualizer.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 4</button>
     </div>
 
-    <!-- Alligator box -->
-<div class="relative w-[657px] h-[685px] overflow-hidden border-4 border-green-400 rounded-xl bg-green-950/80 p-[14px]">
-  <img src="AlligatorPic.png" alt="Alligator" class="relative mx-auto w-full h-auto max-w-[629px] z-10 drop-shadow-lg rounded-xl">
-</div>
-
+    <!-- Video container -->
+    <div class="relative w-full max-w-full md:w-[1200px] overflow-hidden border-4 border-green-400 rounded-xl shadow-lg bg-green-950/80">
+      <video id="bdayVideo" class="w-full h-auto" autoplay loop muted>
+        <source src="vid-1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
     </div>
-  </section>
 
-  <!-- Wishes Section -->
-  <section id="wishes" class="grid-bg py-20 px-10">
-    <h2 class="text-6xl font-bold text-green-300 mb-14 text-center">Special Birthday Wishes</h2>
-    <div class="flex flex-col items-center gap-8">
-
-      <!-- Video selector buttons -->
-      <div class="flex gap-4 mb-4">
-        <button onclick="changeVideo('0_People_Group_3840x2160.mp4')" class="px-6 py-3 bg-green-600 rounded-lg text-xl font-bold hover:bg-green-700">Video 1</button>
-        <button onclick="changeVideo('678554_University_College_3840x2160.mp4')" class="px-6 py-3 bg-green-600 rounded-lg text-xl font-bold hover:bg-green-700">Video 2</button>
-        <button onclick="changeVideo('1118034_1080p_4k_4096x2160.mp4')" class="px-6 py-3 bg-green-600 rounded-lg text-xl font-bold hover:bg-green-700">Video 3</button>
-        <button onclick="changeVideo('Anuv Jain - AFSOS ft. AP Dhillon Official Visualizer.mp4')" class="px-6 py-3 bg-green-600 rounded-lg text-xl font-bold hover:bg-green-700">Video 4</button>
-      </div>
-
-      <!-- Video container with border -->
-      <div class="relative w-[1200px] overflow-hidden border-4 border-green-400 rounded-xl shadow-lg bg-green-950/80">
-        <video id="bdayVideo" class="w-full h-auto" autoplay loop muted>
-          <source src="vid-1.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <!-- Control buttons -->
-      <div class="flex gap-4">
-        <button onclick="playVideo()" class="px-6 py-3 bg-green-600 rounded-lg text-xl font-bold hover:bg-green-700">▶ Play</button>
-        <button onclick="pauseVideo()" class="px-6 py-3 bg-green-600 rounded-lg text-xl font-bold hover:bg-green-700">⏸ Pause</button>
-        <button onclick="muteVideo()" class="px-6 py-3 bg-green-600 rounded-lg text-xl font-bold hover:bg-green-700">🔇 Mute</button>
-        <button onclick="unmuteVideo()" class="px-6 py-3 bg-green-600 rounded-lg text-xl font-bold hover:bg-green-700">🔊 Unmute</button>
-      </div>
+    <!-- Control buttons -->
+    <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mt-4">
+      <button onclick="playVideo()" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">▶ Play</button>
+      <button onclick="pauseVideo()" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">⏸ Pause</button>
+      <button onclick="muteVideo()" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">🔇 Mute</button>
+      <button onclick="unmuteVideo()" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">🔊 Unmute</button>
     </div>
-  </section>
+  </div>
+</section>
 
 <script>
-  // Video controls
-  const video = document.getElementById("bdayVideo");
-  function playVideo() { video.play(); }
-  function pauseVideo() { video.pause(); }
-  function muteVideo() { video.muted = true; }
-  function unmuteVideo() { video.muted = false; }
-  function changeVideo(file) {
-    video.pause();
-    video.querySelector("source").src = file;
-    video.load();
-    video.play();
+// Video controls
+const video = document.getElementById("bdayVideo");
+function playVideo() { video.play(); }
+function pauseVideo() { video.pause(); }
+function muteVideo() { video.muted = true; }
+function unmuteVideo() { video.muted = false; }
+function changeVideo(file) {
+  video.pause();
+  video.querySelector("source").src = file;
+  video.load();
+  video.play();
+}
+
+// Orb animation
+const orb = document.querySelector(".orb");
+let mouseX = 0, mouseY = 0;
+let orbX = window.innerWidth / 2, orbY = window.innerHeight / 2;
+document.addEventListener("mousemove", e => { mouseX = e.clientX; mouseY = e.clientY; });
+document.addEventListener("click", () => {
+  orb.classList.add("click");
+  setTimeout(() => orb.classList.remove("click"), 300);
+});
+function createTrail(x, y) {
+  const trail = document.createElement("div");
+  trail.className = "trail";
+  trail.style.left = `${x}px`;
+  trail.style.top = `${y}px`;
+  document.body.appendChild(trail);
+  setTimeout(() => trail.remove(), 400);
+}
+function animateOrb() {
+  orbX += (mouseX - orbX) * 0.15;
+  orbY += (mouseY - orbY) * 0.15;
+  orb.style.left = `${orbX}px`;
+  orb.style.top = `${orbY}px`;
+  createTrail(orbX, orbY);
+  requestAnimationFrame(animateOrb);
+}
+animateOrb();
+
+// Smooth parallax with idle drift
+let targetX = 0, targetY = 0, currentX = 0, currentY = 0, lastMouseMove = Date.now();
+document.addEventListener("mousemove", e => { 
+  targetX = (e.clientX / window.innerWidth) * 40;
+  targetY = (e.clientY / window.innerHeight) * 40;
+  lastMouseMove = Date.now(); 
+});
+function updateGridPosition() {
+  if(Date.now() - lastMouseMove > 1000) {
+    targetX += Math.sin(Date.now() / 2000) * 0.05;
+    targetY += Math.cos(Date.now() / 2500) * 0.05;
   }
-
-  // Orb animation
-  const orb = document.querySelector(".orb");
-  let mouseX = 0, mouseY = 0;
-  let orbX = window.innerWidth / 2, orbY = window.innerHeight / 2;
-
-  document.addEventListener("mousemove", e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+  currentX += (targetX - currentX) * 0.1;
+  currentY += (targetY - currentY) * 0.1;
+  document.querySelectorAll(".grid-bg").forEach(el => {
+    el.style.backgroundPosition = `${currentX}px ${currentY}px`;
   });
-
-  document.addEventListener("click", () => {
-    orb.classList.add("click");
-    setTimeout(() => orb.classList.remove("click"), 300);
-  });
-
-  function createTrail(x, y) {
-    const trail = document.createElement("div");
-    trail.className = "trail";
-    trail.style.left = `${x}px`;
-    trail.style.top = `${y}px`;
-    document.body.appendChild(trail);
-    setTimeout(() => trail.remove(), 400);
-  }
-
-  function animateOrb() {
-    orbX += (mouseX - orbX) * 0.15;
-    orbY += (mouseY - orbY) * 0.15;
-    orb.style.left = `${orbX}px`;
-    orb.style.top = `${orbY}px`;
-    createTrail(orbX, orbY);
-    requestAnimationFrame(animateOrb);
-  }
-  animateOrb();
-
-  // Smooth parallax with idle drift
-  let targetX = 0, targetY = 0;
-  let currentX = 0, currentY = 0;
-  let lastMouseMove = Date.now();
-
-  document.addEventListener("mousemove", (e) => {
-    targetX = (e.clientX / window.innerWidth) * 40;
-    targetY = (e.clientY / window.innerHeight) * 40;
-    lastMouseMove = Date.now();
-  });
-
-  function updateGridPosition() {
-    if (Date.now() - lastMouseMove > 1000) {
-      targetX += Math.sin(Date.now() / 2000) * 0.05;
-      targetY += Math.cos(Date.now() / 2500) * 0.05;
-    }
-    currentX += (targetX - currentX) * 0.1;
-    currentY += (targetY - currentY) * 0.1;
-    document.querySelectorAll(".grid-bg").forEach(el => {
-      el.style.backgroundPosition = `${currentX}px ${currentY}px`;
-    });
-    requestAnimationFrame(updateGridPosition);
-  }
-  updateGridPosition();
+  requestAnimationFrame(updateGridPosition);
+}
+updateGridPosition();
 </script>
-
 </body>
 </html>
