@@ -49,6 +49,23 @@ body {
   z-index: 9998;
 }
 @keyframes fadeTrail { to { transform: translate(-50%, -50%) scale(2.5); opacity: 0; } }
+/* iPhone 16 Pro Max specific heading size */
+@media only screen 
+  and (width: 440px) 
+  or (height: 956px)  {
+    h1 {
+      font-size: 200px;
+      line-height: 1.1;
+    }
+}
+
+/* Smaller devices (less than iPhone 16 Pro Max viewport) */
+@media only screen and (max-width: 439px) {
+    h1 {
+      font-size: 120px; /* Adjust for smaller screens */
+      line-height: 1.2;
+    }
+}
 </style>
 </head>
 <body class="bg-black text-white">
