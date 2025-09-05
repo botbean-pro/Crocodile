@@ -12,7 +12,6 @@ body {
   font-family: 'Orbitron', sans-serif;
   overflow-x: hidden;
 }
-
 /* Dynamic Grid Background */
 .grid-bg {
   background-image: linear-gradient(to right, rgba(0, 255, 0, 0.15) 1px, transparent 1px),
@@ -20,7 +19,6 @@ body {
   background-size: 40px 40px;
   background-position: 0 0;
 }
-
 /* Orb Styling */
 .orb {
   pointer-events: none;
@@ -35,7 +33,6 @@ body {
   transition: transform 0.2s ease-out, opacity 0.3s ease-out;
 }
 .orb.click { transform: translate(-50%, -50%) scale(5); opacity: 0; }
-
 .trail {
   pointer-events: none;
   position: fixed;
@@ -49,7 +46,6 @@ body {
   z-index: 9998;
 }
 @keyframes fadeTrail { to { transform: translate(-50%, -50%) scale(2.5); opacity: 0; } }
-/* iPhone 16 Pro Max specific heading size */
 @media only screen 
   and (width: 440px) 
   or (height: 956px)  {
@@ -58,11 +54,10 @@ body {
       line-height: 1.1;
     }
 }
-
-/* Smaller devices (less than iPhone 16 Pro Max viewport) */
+/* Smaller devices */
 @media only screen and (max-width: 439px) {
     h1 {
-      font-size: 120px; /* Adjust for smaller screens */
+      font-size: 120px;
       line-height: 1.2;
     }
 }
@@ -99,16 +94,18 @@ body {
   <div class="flex flex-col items-center gap-6 sm:gap-8">
     <!-- Video selector buttons -->
     <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-4">
-      <button onclick="changeVideo('0_People_Group_3840x2160.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 1</button>
-      <button onclick="changeVideo('678554_University_College_3840x2160.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 2</button>
-      <button onclick="changeVideo('1118034_1080p_4k_4096x2160.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 3</button>
-      <button onclick="changeVideo('Anuv Jain - AFSOS ft. AP Dhillon Official Visualizer.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 4</button>
+      <button onclick="changeVideo('My-vid.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 1</button>
+      <button onclick="changeVideo('Tinyher-vid.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 2</button>
+      <button onclick="changeVideo('her-vid.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 3</button>
+      <button onclick="changeVideo('Big-Him.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 4</button>
+      <button onclick="changeVideo('CrazyHer.mp4')" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">Video 5</button>
     </div>
 
-    <!-- Video container -->
-    <div class="relative w-full max-w-full md:w-[1200px] overflow-hidden border-4 border-green-400 rounded-xl shadow-lg bg-green-950/80">
-      <video id="bdayVideo" class="w-full h-auto" autoplay loop muted>
-        <source src="vid-1.mp4" type="video/mp4">
+    <!-- Video container (fixed size, video object-contain) -->
+    <div class="relative overflow-hidden border-4 border-green-400 rounded-xl shadow-lg bg-green-950/80 flex justify-center items-center"
+         style="width: 1280px; height: 720px;">
+      <video id="bdayVideo" class="w-full h-full object-contain bg-black" autoplay loop muted>
+        <source src="" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
