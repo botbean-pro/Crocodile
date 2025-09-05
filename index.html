@@ -12,7 +12,7 @@ body {
   font-family: 'Orbitron', sans-serif;
   overflow-x: hidden;
 }
-/* Dynamic Grid Background */ /* hhhhh */
+/* Dynamic Grid Background */
 .grid-bg {
   background-image: linear-gradient(to right, rgba(0, 255, 0, 0.15) 1px, transparent 1px),
                     linear-gradient(to bottom, rgba(0, 255, 0, 0.15) 1px, transparent 1px);
@@ -118,6 +118,14 @@ body {
       <button onclick="unmuteVideo()" class="px-4 sm:px-6 py-2 sm:py-3 bg-green-600 rounded-lg text-sm sm:text-xl font-bold hover:bg-green-700">🔊 Unmute</button>
     </div>
   </div>
+
+  <!-- 3D Alligator Model (place after the video container section) -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<div class="flex justify-center pt-8">
+  <model-viewer src="alligator.glb" alt="3D Alligator"
+    auto-rotate camera-controls
+    style="width: 1200px; height: 900px; background: transparent; border: solid 4px rgb(0, 240, 0); border-radius: 10px"></model-viewer>
+</div>
 </section>
 
 <script>
